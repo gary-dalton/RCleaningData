@@ -40,7 +40,7 @@ The run_analysis.R script, loads the original test and trials data. These data a
 
 ##Description of the variables in the _summarySamsungActivity.txt_ file
 
-The file contains a data.frame with 180 observations of 68 variables.
+The file contains a data.frame with 180 observations of 68 variables. All data has been normalised into a range between -1 and 1.
 
 - Subject
 - Activity
@@ -110,6 +110,7 @@ The file contains a data.frame with 180 observations of 68 variables.
 - fBodyBodyGyroMag.std
 - fBodyBodyGyroJerkMag.mean
 - fBodyBodyGyroJerkMag.std
+
 
 ###Subject
 The number of the subject performing the activity
