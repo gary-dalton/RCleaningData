@@ -19,9 +19,26 @@ Based upon the Human Activity Recognition Using Smartphones Data Set.
 ###Collection of the raw data
 _from Human Activity Recognition Using Smartphones Data Set_
 
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+The experiments have been carried out with a group of 30 volunteers within an
+age bracket of 19-48 years. Each person performed six activities (WALKING,
+WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a
+smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer
+and gyroscope, we captured 3-axial linear acceleration and 3-axial angular
+velocity at a constant rate of 50Hz. The experiments have been video-recorded
+to label the data manually. The obtained dataset has been randomly partitioned
+into two sets, where 70% of the volunteers was selected for generating the
+training data and 30% the test data.
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying
+noise filters and then sampled in fixed-width sliding windows of 2.56 sec and
+50% overlap (128 readings/window). The sensor acceleration signal, which has
+gravitational and body motion components, was separated using a Butterworth
+low-pass filter into body acceleration and gravity. The gravitational force is
+assumed to have only low frequency components, therefore a filter with 0.3 Hz
+cutoff frequency was used. From each window, a vector of features was obtained
+by calculating variables from the time and frequency domain.
+
+All data has been normalised into a range between -1 and 1.
 
 ##Creating the tidy datafile
 
@@ -36,11 +53,21 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ###Cleaning of the data
 
-The run_analysis.R script, loads the original test and trials data. These data are stripped of columns without mean or standard deviation. This data is then combined with the subject and activity columns. A final step takes the mean of each column grouped by subject and activity.
+The run_analysis.R script, loads the original test and trials data. These data
+are stripped of columns without mean or standard deviation. This data is then
+combined with the subject and activity columns. A final step takes the mean
+of each column grouped by subject and activity.
+
+Restated, the final outputted data includes only the mean of the means and
+standard deviations grouped by activity and subject.
 
 ##Description of the variables in the _summarySamsungActivity.txt_ file
 
-The file contains a data.frame with 180 observations of 68 variables. All data has been normalised into a range between -1 and 1.
+The file contains a data.frame with 180 observations of 68 variables. Subject
+and Activity are grouping variables. All the other variables are the **means**
+of the indicated measurement. Thus, tBodyAcc.mean.X is the mean of the time
+body acceleration means on the X axis. Also, tBodyAcc.std.X is the mean of the
+time body acceleration standard deviations.
 
 - Subject
 - Activity
@@ -135,7 +162,8 @@ The type of activity performed
 The time body acceleration.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - tBodyAcc.mean.X
     - tBodyAcc.mean.Y
@@ -148,7 +176,8 @@ The time body acceleration.
 The time gravity acceleration.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - tGravityAcc.mean.X
     - tGravityAcc.mean.Y
@@ -162,7 +191,8 @@ The time gravity acceleration.
 The time body acceleration jerk.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - tBodyAccJerk.mean.X
     - tBodyAccJerk.mean.Y
@@ -175,7 +205,8 @@ The time body acceleration jerk.
 The time body gyroscope.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - tBodyGyro.mean.X
     - tBodyGyro.mean.Y
@@ -188,7 +219,8 @@ The time body gyroscope.
 The time body gyroscope jerk.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - tBodyGyroJerk.mean.X
     - tBodyGyroJerk.mean.Y
@@ -201,7 +233,8 @@ The time body gyroscope jerk.
 The time body acceleration magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - tBodyAccMag.mean
     - tBodyAccMag.std
@@ -210,7 +243,8 @@ The time body acceleration magnitude.
 The time gravity acceleration magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - tGravityAccMag.mean
     - tGravityAccMag.std
@@ -219,7 +253,8 @@ The time gravity acceleration magnitude.
 The time body acceleration jerk magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - tBodyAccJerkMag.mean
     - tBodyAccJerkMag.std
@@ -228,7 +263,8 @@ The time body acceleration jerk magnitude.
 The time body gyroscope magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - tBodyGyroJerkMag.mean
     - tBodyGyroJerkMag.std
@@ -237,7 +273,8 @@ The time body gyroscope magnitude.
 The frequency body acceleration.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - fBodyAcc.mean.X
     - fBodyAcc.mean.Y
@@ -251,7 +288,8 @@ The frequency body acceleration.
 The frequency body acceleration jerk.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - fBodyAccJerk.mean.X
     - fBodyAccJerk.mean.Y
@@ -265,7 +303,8 @@ The frequency body acceleration jerk.
 The frequency body gyroscope.
 
 - Numeric
-- Encompasses 6 columns, one each for mean and standard deviation along each axis (X, Y, or Z). The subsequent variables are then:
+- Encompasses 6 columns, one each for mean and standard deviation along each
+axis (X, Y, or Z). The subsequent variables are then:
 
     - fBodyGyro.mean.X
     - fBodyGyro.mean.Y
@@ -278,7 +317,8 @@ The frequency body gyroscope.
 The frequency body acceleration magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - fBodyAccMag.mean
     - fBodyAccMag.std
@@ -287,7 +327,8 @@ The frequency body acceleration magnitude.
 The frequency body body acceleration jerk magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - fBodyBodyAccJerkMag.mean
     - fBodyBodyAccJerkMag.std
@@ -296,7 +337,8 @@ The frequency body body acceleration jerk magnitude.
 The frequency body body gyroscope magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - fBodyBodyGyroMag.mean
     - fBodyBodyGyroMag.std
@@ -305,7 +347,8 @@ The frequency body body gyroscope magnitude.
 The frequency body body gyroscope jerk magnitude.
 
 - Numeric
-- Encompasses 2 columns, one each for mean and standard deviation. The subsequent variables are then:
+- Encompasses 2 columns, one each for mean and standard deviation. The
+subsequent variables are then:
 
     - fBodyBodyGyroJerkMag.mean
     - fBodyBodyGyroJerkMag.std

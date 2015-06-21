@@ -1,3 +1,4 @@
+## PART 1
 ## setwd("~/R/RCleaningData")
 ## Read in the features table
 ## Adjust features table to include only those columns that include mean() or std()
@@ -7,6 +8,7 @@ features<- f_r[gr1,]
 features$col_name<- gsub('\\(\\)', "", features$col_name, perl=TRUE)
 
 
+## PART 2
 ## Read in the test table and auxillaries
 ##
 tmp<- read.table("UCI HAR Dataset/test/X_test.txt")
@@ -18,6 +20,7 @@ tmp_act[,'activity']<- factor(tmp_act[,'activity'],  labels=c("WALKING", "WALKIN
 dataA<- cbind(tmp_sub, tmp_act, tmp_data)
 
 
+## PART 3
 ## Read in the training table and auxillaries
 ##
 tmp<- read.table("UCI HAR Dataset/train/X_train.txt")
@@ -28,12 +31,16 @@ tmp_act<- read.table("UCI HAR Dataset/train/y_train.txt", col.names=c("activity"
 tmp_act[,'activity']<- factor(tmp_act[,'activity'],  labels=c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"))
 dataB<- cbind(tmp_sub, tmp_act, tmp_data)
 
+
+## PART 4
 ## Join into 1 dataset
 ## remove tmp variables
 ##
 activityRecognition<- rbind(dataA, dataB)
 rm(list=ls(pattern="tmp"))
 
+
+## PART 5
 ## Build new table with means
 ##
 nc<- ncol(activityRecognition)
@@ -60,7 +67,7 @@ for (i in 1:length(uniqueSubjects)){
     }
 }
 
+
+## PART 6
 filepath<- "summarySamsungActivity.txt"
 write.table(means_df, filepath, row.name=FALSE)
-
-
