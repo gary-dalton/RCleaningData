@@ -64,8 +64,8 @@ standard deviations grouped by activity and subject.
 ##Description of the variables in the _summarySamsungActivity.txt_ file
 
 The file contains a data.frame with 180 observations of 68 variables. Subject
-and Activity are grouping variables. All the other variables are the **means**
-of the indicated measurement. Thus, tBodyAcc.mean.X is the mean of the time
+and Activity are grouping variables. All the other variables are the **means
+of the indicated measurement**. Thus, tBodyAcc.mean.X is the mean of the time
 body acceleration means on the X axis. Also, tBodyAcc.std.X is the mean of the
 time body acceleration standard deviations.
 
@@ -137,6 +137,8 @@ time body acceleration standard deviations.
 - fBodyBodyGyroMag.std
 - fBodyBodyGyroJerkMag.mean
 - fBodyBodyGyroJerkMag.std
+ 
+**Important: All variables are the means of the indicated measurement**
 
 
 ###Subject
